@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="game__header hidden">
+        <div class="btn header-btn header-btn_info hidden" onclick="showScreen(screenInfo)" ontouchstart>
+            <svg width="12" height="33" viewBox="0 0 12 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1.14307" y="15.3076" width="9.09722" height="17.2847" rx="3.63889" fill="white" />
+                <rect x="0.233398" y="0.808594" width="10.9167" height="10.9167" rx="5.45833" fill="white" />
+            </svg>
+
+        </div>
+        <div class="game__progress hidden">
+            <div class="game__progress-ring"></div>
+            <div class="game__progress-ring"></div>
+            <div class="game__progress-ring"></div>
+            <div class="game__progress-ring"></div>
+            <div class="game__progress-ring"></div>
+        </div>
+        <div class="btn header-btn header-btn_sound sound-on" ontouchstar>
+            <svg class="sound-on" width="35" height="30" viewBox="0 0 35 30" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0.35791 8.34418V18.8739C0.35791 20.0797 1.33542 21.0572 2.54124 21.0572H9.60472C10.1201 21.0572 10.6188 21.2395 11.0127 21.5718L19.3675 28.6212C20.7871 29.819 22.9588 28.8099 22.9588 26.9525V2.44886C22.9588 0.591495 20.7871 -0.417603 19.3675 0.780161L10.4028 8.34418M34.2593 14.7007C34.2593 11.9878 32.9452 9.55207 30.7924 7.81861C29.5792 6.8417 27.9812 7.87787 27.9812 9.43552V19.953C27.9812 21.4972 29.5554 22.5339 30.7664 21.5758C32.9346 19.8605 34.2593 17.4091 34.2593 14.7007Z"
+                    fill="white" />
+            </svg>
+            <svg class="sound-off" width="39" height="28" viewBox="0 0 39 28" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0.350098 9.67876C0.350098 8.47294 1.32761 7.49543 2.53343 7.49543H7.71942C8.29847 7.49543 8.85381 7.2654 9.26327 6.85594L15.2387 0.880504C16.6141 -0.49492 18.9659 0.479211 18.9659 2.42435V24.977C18.9659 26.9222 16.6141 27.8963 15.2387 26.5209L9.26327 20.5454C8.85381 20.136 8.29847 19.906 7.71942 19.906H2.53343C1.32761 19.906 0.350098 18.9284 0.350098 17.7226V9.67876ZM26.9161 15.2445C27.7687 14.3919 27.7687 13.0095 26.9161 12.1568L24.561 9.80172C23.7556 8.99636 23.7556 7.6906 24.561 6.88524C25.3663 6.07988 26.6721 6.07988 27.4774 6.88524L29.8326 9.24037C30.6852 10.093 32.0676 10.093 32.9203 9.24037L35.2754 6.88524C36.0807 6.07988 37.3865 6.07988 38.1919 6.88524C38.9972 7.6906 38.9972 8.99635 38.1919 9.80172L35.8367 12.1568C34.9841 13.0095 34.9841 14.3919 35.8367 15.2445L38.1919 17.5997C38.9972 18.405 38.9972 19.7108 38.1919 20.5161C37.3865 21.3215 36.0807 21.3215 35.2754 20.5161L32.9203 18.161C32.0676 17.3084 30.6852 17.3084 29.8326 18.161L27.4774 20.5161C26.6721 21.3215 25.3663 21.3215 24.561 20.5161C23.7556 19.7108 23.7556 18.405 24.561 17.5997L26.9161 15.2445Z"
+                    fill="white" />
+            </svg>
+
+        </div>
+    </div>
+    <div class="screen screen-with-header screen-game">
+
+    </div>
+    <div class="screen screen-with-header screen-onbord hidden">
+        <div class="screen-onbord__content">
+            <div class="screen-onbord__content-img"></div>
+            <div class="screen-onbord__content-text">
+                <div>
+                    Испытайте удачу! <br>
+                    Бросьте колечко на рог единорога 5 раз и получите промокод от Магнит
+                </div>
+                <div class="btn btn_primary" onclick="startGame()" ontouchstart>Играть</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="screen screen_flex screen-camera-acces ">
+        <div class="bubble">
+            <div class="bubble__title">
+                “Mixar Web” Whoud Like to Acces the Camera
+            </div>
+            <div class="bubble__text">
+                Для отображения контента <br>
+                дополненной реальности
+
+            </div>
+            <div class="bubble__btns">
+                <div class="btn btn_primary" onclick="showScreen(errorCameraAcces)" ontouchstart>Dont Allow</div>
+                <div class="btn btn_primary" onclick="AllowAcces()" ontouchstart>Allow</div>
+            </div>
+            <div class="test-btn_group">
+                <button class="test-button" onclick="showScreen(errorCameraNo)">Экран ошибки</button>
+            </div>
+        </div>
+    </div>
+    <div class="screen screen_flex screen-preloader ">
+        <div class="mixar-logo">
+            <span class="mixar-logo_bold">Mixar WEB</span>
+            <span>Приложение с мгновенным запуском</span>
+            <svg class="progress-ring" width="60" height="60">
+                <circle class="progress-ring__indicator" stroke="#E7000F" stroke-width="10" fill="transparent" r="22"
+                    cx="30" cy="30" stroke-dasharray="314" stroke-dashoffset="314" />
+            </svg>
+            <div class="test-btn_group">
+                <button class="test-button" onclick="showScreen(errorSupport)">Экран ошибки</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="screen screen-prloader-game hidden">
+        <div class="logo"></div>
+        <div class="game-progress-bar">
+            <div class="game-progress-bar__line">
+                <div class="game-progress-bar__line-progress" style="width: 0%;"></div>
+            </div>
+            <span>Загрузка</span>
+        </div>
+    </div>
+    <div class="screen screen-scan__content scan-box hidden">
+        <div class="camera-scan"></div>
+        <div class="bubble_small">
+            Наведите камеру на упаковку
+            <div class="btn btn_primary" onclick="scanBoxOk()" ontouchstart>Сканировать</div>
+        </div>
+        <div class="test-btn_group">
+            <button class="test-button" onclick="showScreen(errorBoxNo)">Экран ошибки</button>
+        </div>
+    </div>
+    <div class="screen screen-scan__content scan-location hidden">
+
+        <div class="bubble_small">
+            Сканирование прошло успешно! Разметите единорога на ровной поверхности
+        </div>
+        <div class="scan_image"></div>
+        <div class="test-btn_group">
+            <button class="test-button" onclick="scanLocationOk()">Location ok</button>
+
+        </div>
+
+    </div>
+    <div class="screen screen-scan__content scan-resize hidden">
+
+        <div class="bubble_small">
+            Зажмите экран двумя пальцами, <br>чтобы поворачивать или изменять размер единорога
+        </div>
+
+        <div class="btn btn_primary" onclick="scanResizeOk()" ontouchstart>Установить</div>
+        <div class="test-btn_group">
+            <button class="test-button" onclick="showScreen(errorLocationNo)">Экран ошибки</button>
+        </div>
+    </div>
+    <div class="screen screen-tutorial hidden">
+        <div class="tutorial-img">
+            <div class="tutorial-img__arrow"></div>
+            <div class="tutorial-img__hand"></div>
+        </div>
+        <div class="bubble_small">
+            Проведите пальцем вверх, <br>чтобы бросить колечко
+        </div>
+        <div class="test-btn_group">
+            <button class="test-button" onclick="tutorialOk() ">Ok</button>
+        </div>
+    </div>
+    <div class="screen screen_flex screen-winner hidden">
+        <div class="bubble">
+            <div class="win-title">Победа!</div>
+            <div class="win-text">
+                Поздравляем, вы справились! <br>
+                Вот ваш промокод
+            </div>
+            <div class="win__btn-group">
+                <div class="btn btn_promocode">
+                    <span id="promocode">456789</span>
+                </div>
+                <div class="btn btn_primary btn_play-again" style="display: none;" onclick="playGameAgain()"
+                    ontouchstart>Играть еще</div>
+            </div>
+        </div>
+    </div>
+    <div class="screen screen_flex screen-loser hidden">
+        <div class="bubble">
+
+            <div class="win-text">
+                В этот раз не получилось. <br>Попробуйте снова
+            </div>
+
+            <div class="btn btn_primary btn_play-again" onclick="playGameAgain()" ontouchstart>Играть снова</div>
+
+        </div>
+    </div>
+
+    <div class="screen screen_flex screen-error error-support hidden">
+        <div class="error_img"></div>
+        <div class="error-title">
+            Ваше устройство <br>
+            не поддерживает AR
+        </div>
+        <div class="error-text">
+            Ваше устройство не поддерживает функции дополненной реальности. <br>Для запуска воспользуйтесь устройством с
+            поддержкой <br>ARCore или ARKit
+        </div>
+        <div class="btn btn_primary" onclick="hideScreen(errorSupport)">Выйти</div>
+    </div>
+    <div class="screen screen_flex screen-error error-camera-no hidden">
+        <div class="error_img"></div>
+        <div class="error-title">
+            Ошибка
+        </div>
+        <div class="error-text">
+            Устройство не оборудовано камерой
+        </div>
+        <div class="btn btn_primary" onclick="hideScreen(errorCameraNo)">Закрыть</div>
+    </div>
+    <div class="screen screen_flex screen-error error-box-no hidden">
+        <div class="error_img"></div>
+        <div class="error-title">
+            Ошибка
+        </div>
+        <div class="error-text">
+            Отсутствует упаковка
+        </div>
+        <div class="btn btn_primary" onclick="hideScreen(errorBoxNo)">Закрыть</div>
+    </div>
+    <div class="screen screen_flex screen-error error-location-no hidden">
+        <div class="error_img"></div>
+        <div class="error-title">
+            Ошибка
+        </div>
+        <div class="error-text">
+            Поверхность не подходит
+        </div>
+        <div class="btn btn_primary" onclick="hideScreen(errorLocationNo)">Закрыть</div>
+    </div>
+    <div class="screen screen_flex screen-error error-camera-acces hidden">
+        <div class="error_img"></div>
+        <div class="error-title">
+            Ошибка
+        </div>
+        <div class="error-text">
+            Для работы AR необходимо разрешение на использование<br> камеры. Включите доступ<br> в настройках
+            устройства, <br>чтобы продолжить
+        </div>
+        <div class="btn btn_primary" onclick='hideScreen(errorCameraAcces)'>Попробовать снова</div>
+        <div class="btn btn_primary" onclick='hideScreen(errorCameraAcces)'>Выйти</div>
+    </div>
+    <div class="screen screen-info hidden">
+        <div class="info-title">Вопросы и ответы</div>
+        <div class="info-container">
+            <div class="info-wrapper">
+                <span class="info-wrapper__title">Как играть?</span>
+                <ol>
+                    <li>Отсканируйте изображение единорога на упаковке </li>
+                    <li>Согласно инструкции, разместите единорога на ровной поверхности</li>
+                    <li>Проведите пальцем вверх по экрану, чтобы бросить колечко на его рог</li>
+                </ol>
+                <span>Попадите минимум 1 раз и получите промокод <br>от Магнит</span>
+            </div>
+            <div class="info-wrapper">
+                <span class="info-wrapper__title">На каких устройствах можно играть?</span>
+                <ol>
+                    <li>Устройство должно поддерживать технологию “ARCORE/ARKIT”.
+                    </li>
+                    <li>На устройствах Android должна поддерживаться и быть активирована технология "Instant Apps".</li>
+                    <li>IOS 15 и выше для IOS устройств.
+                    </li>
+                    <li>Android 8.0 и выше для Android устройств.
+                    </li>
+                    <li>Скорость загрузки контента дополненной реальности напрямую зависит от скорости интернета на
+                        устройстве конечного пользователя.</li>
+                </ol>
+
+            </div>
+        </div>
+        <div class="btn btn_primary" onclick="hideScreen(screenInfo)" ontouchstart>Закрыть</div>
+
+    </div>
+    <div class="test-btn_group_rings" style="display: none;">
+        <button class="test-button" onclick="testBtnRing('yelow', this)">Кольцо золотое</button>
+        <button class="test-button" onclick="testBtnRing('blue', this)">Кольцо голуб</button>
+        <button class="test-button" onclick="testBtnRing('green', this)">Кольцо зелен</button>
+        <button class="test-button" onclick="testBtnRing('pink', this)">Кольцо роз</button>
+        <button class="test-button" onclick="testBtnRing('orang', this)">Кольцо оранж</button>
+
+        <button class="test-button" style="color: red;" onclick="missRing()">промах</button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
