@@ -356,6 +356,7 @@ margin-bottom: 13px;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    gap: 10px;
     background-color: #00000000;
 }
 .screen-scan__content.hidden {
